@@ -49,8 +49,9 @@
 
       function FullScreen()
       {
-        myGameInstance.SetFullscreen(1);
-
+        //myGameInstance.SetFullscreen(1);
+        document.body.requestFullscreen();
+        screen.orientation.lock("landscape");
       }
     </script>
   </body>
