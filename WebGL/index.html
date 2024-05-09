@@ -7,13 +7,16 @@
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;" onresize="OnResize()">
     <canvas id="unity-canvas" tabindex="-1" style="width: 0px; height: 0px; background: #231F20;"></canvas>
-    <input type="button" style="width: 200px; height: 80px; margin: auto;" name="Play_button" value="Play" onclick="Play()">
+    <input id="play-button" type="button" style="width: 200px; height: 80px; margin: auto;" name="Play_button" value="Play" onclick="Play()">
     <input type="button" style="position: absolute; width: 100px; height: 50px; left: 10px;" name="full_screen_button" value="Full Screen" onclick="FullScreen()">
     <script src="Build/WebGL.loader.js"></script>
     <script>
       var myGameInstance;
       function Play()
       {
+        document.getElementById("play-button").style.width = "0px";
+        document.getElementById("play-button").style.height = "0px";
+
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
@@ -28,7 +31,7 @@
         document.body.style.textAlign = "left";
       }
 
-      createUnityInstance(document.querySelector("#unity-canvas"), {
+        createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/WebGL.data.unityweb",
         frameworkUrl: "Build/WebGL.framework.js.unityweb",
         codeUrl: "Build/WebGL.wasm.unityweb",
@@ -38,12 +41,11 @@
         productVersion: "1.0",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      }).then((unityInstacne)=>{
+        }).then((unityInstacne)=>{
         myGameInstance = unityInstacne;
         myGameInstance.SendMessage("JsComunication", "OnStart");
         OnResize();
-        //myGameInstance.SetFullscreen(1);
-      });
+        });
       }
 
       function OnResize()
