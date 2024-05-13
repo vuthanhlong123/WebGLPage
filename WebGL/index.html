@@ -50,7 +50,6 @@
 
       function OnResize()
       {
-        alert("pass");
           myGameInstance.SendMessage("JsComunication", "OnGameResize");
       }
 
@@ -65,6 +64,7 @@
         {
           document.body.requestFullscreen();
           screen.orientation.lock("landscape");
+          OnResize();
         }
       }
     </script>
