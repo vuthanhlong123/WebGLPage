@@ -76,22 +76,19 @@
 
       function FullScreen()
       {
-        document.body.requestFullscreen();
-          // if(document.body.fullscreenEnabled)
-          // {
-          //   if(document.fullscreenElement != null)
-          //   {
-          //     document.exitFullscreen();
-          //   }
-          //   else
-          //   {
-          //     document.body.requestFullscreen();
-          //     if(/Android/i.test(navigator.userAgent) == false)
-          //     {
-          //         screen.orientation.lock("landscape");
-          //     }
-          //   }
-          // }
+        if(document.fullscreenElement != null)
+        {
+            document.exitFullscreen();
+        }
+        else
+        {
+            document.body.requestFullscreen();
+            if(/Android/i.test(navigator.userAgent) == false)
+            {
+                screen.orientation.lock("landscape");
+            }
+        }
+          
           // else if(document.body.webkitSupportsFullscreen)
           // {
           //   if(document.webkitDisplayingFullscreen)
