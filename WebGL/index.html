@@ -66,9 +66,8 @@
       function PlayButtonDisplayment()
       {
          button = document.getElementById("play-button");
-         button.style.marginLeft = (window.innerWidth/2) - (button.getBoundingClientRect().width/2);
-         button.style.marginTop = (window.innerHeight/2) - (button.getBoundingClientRect().height/2);
-         alert(button.style.marginLeft);
+         button.style.marginLeft = (window.innerWidth/2) - (button.getBoundingClientRect().width/2) +"px";
+         button.style.marginTop = (window.innerHeight/2) - (button.getBoundingClientRect().height/2) +"px";
       }
 
       function FullScreen()
