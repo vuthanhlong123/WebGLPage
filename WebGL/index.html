@@ -59,11 +59,11 @@
         //alert(document.fullscreenElement);
         if(document.fullscreenElement != null)
         {
+          alert(document.fullscreenElement);
           document.body.exitFullscreen();
         }
         else
         {
-          alert(document.fullscreenElement);
           document.body.requestFullscreen();
           screen.orientation.lock("landscape");
         }
