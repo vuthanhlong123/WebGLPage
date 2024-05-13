@@ -6,15 +6,19 @@
     <title>Unity WebGL Player | WebGLTesting</title>
   </head>
   <body id="game-container" style="text-align: center; padding: 0; border: 0; margin: 0;" onresize="OnResize()">
-    <canvas id="unity-canvas" tabindex="-1" style="width: 0px; height: 0px; background: #231F20;"></canvas>
+    <canvas id="unity-canvas" tabindex="-1" style="width: 0px; height: 0px; background: #231F20; display: none;"></canvas>
     <input id="play-button" type="button" style="width: 200px; height: 80px; margin: auto; display: block;" name="Play_button" value="Play" onclick="Play()">
-    <input id="full_screen_button" type="button" style="position: absolute; width: 100px; height: 50px; left: 10px; display: block;" name="full_screen_button" value="Full Screen" onclick="FullScreen()">
+    <input id="full_screen_button" type="button" style="position: absolute; width: 100px; height: 50px; left: 10px; display: none;" name="full_screen_button" value="Full Screen" onclick="FullScreen()">
     <script src="Build/WebGL.loader.js"></script>
     <script>
       var myGameInstance;
+      var isGamePlayed = false;
+
       function Play()
       {
         document.getElementById("play-button").style.display = "none";
+        document.getElementById("full_screen_button").style.display = "block";
+        document.getElementById("unity-canvas").style.display = "block";
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -50,7 +54,15 @@
       function OnResize()
       {
           myGameInstance.SendMessage("JsComunication", "OnGameResize");
+          if(!isGamePlayed)
+            PlayButtonDisplayment();
+      }
 
+      function PlayButtonDisplayment()
+      {
+         button = document.getElementById("play-button");
+         button.style.marginLeft = (window.innerWidth/2) - (button.getBoundingClientRect().width/2);
+         button.style.marginTop = (window.innerHeight/2) - (button.getBoundingClientRect().height/2);
       }
 
       function FullScreen()
