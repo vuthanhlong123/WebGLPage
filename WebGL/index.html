@@ -50,13 +50,13 @@
 
       function OnResize()
       {
+        alert("pass");
           myGameInstance.SendMessage("JsComunication", "OnGameResize");
       }
 
       function FullScreen()
       {
         //myGameInstance.SetFullscreen(1);
-        alert(document.fullscreenElement?.nodeName);
         if(document.fullscreenElement?.nodeName === "game-container")
         {
           document.body.exitFullscreen();
