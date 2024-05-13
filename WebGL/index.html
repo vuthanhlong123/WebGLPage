@@ -50,7 +50,6 @@
         myGameInstance.SendMessage("JsComunication", "OnStart");
         OnResize();
         });
-
       }
 
       function OnResize()
@@ -72,6 +71,8 @@
          button.style.marginLeft = (window.innerWidth/2) - (button.getBoundingClientRect().width/2) +"px";
          button.style.marginTop = (window.innerHeight/2) - (button.getBoundingClientRect().height/2) +"px";
       }
+
+      PlayButtonDisplayment();
 
       function FullScreen()
       {
