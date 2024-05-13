@@ -83,7 +83,7 @@
         else
         {
             document.body.requestFullscreen();
-            if(/Android/i.test(navigator.userAgent) == false)
+            if(/Android/i.test(navigator.userAgent))
             {
                 screen.orientation.lock("landscape");
             }
