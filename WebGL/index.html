@@ -82,7 +82,16 @@
         }
         else
         {
-          document.body.requestFullscreen();
+          if(document.body.fullscreenEnabled)
+          {
+            document.body.requestFullscreen();
+            document.body.style.transform = "rotate(90deg)"; 
+          }
+          else if(document.body.webkitRequestFullscreen)
+          {
+            document.body.webkitRequestFullscreen();
+          }
+
           if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
             screen.orientation.lock("landscape");
         }
