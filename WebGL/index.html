@@ -56,13 +56,14 @@
       function FullScreen()
       {
         //myGameInstance.SetFullscreen(1);
-        alert(document.fullscreenElement);
+        //alert(document.fullscreenElement);
         if(document.fullscreenElement != null)
         {
           document.body.exitFullscreen();
         }
         else
         {
+          alert(document.fullscreenElement);
           document.body.requestFullscreen();
           screen.orientation.lock("landscape");
         }
