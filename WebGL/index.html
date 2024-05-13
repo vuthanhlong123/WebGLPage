@@ -76,45 +76,46 @@
 
       function FullScreen()
       {
-          if(document.body.fullscreenEnabled)
-          {
-            if(document.fullscreenElement != null)
-            {
-              document.exitFullscreen();
-            }
-            else
-            {
-              document.body.requestFullscreen();
-              if(/Android/i.test(navigator.userAgent) == false)
-              {
-                  screen.orientation.lock("landscape");
-              }
-            }
-          }
-          else if(document.body.webkitSupportsFullscreen)
-          {
-            if(document.webkitDisplayingFullscreen)
-            {
-                document.webkitExitFullscreen();
-            }
-            else
-            {
-                document.body.webkitEnterFullscreen();
-                if(/iPhone|iPad|iPod/i.test(navigator.userAgent))
-                {
-                window.addEventListener("orientationchange", function() {
-                  if (window.orientation == 90 || window.orientation == -90)
-                  {
-                    alert("1");
-                  } 
-                  else 
-                  {
-                    alert("2");
-                  }
-                });
-                }
-            }
-          }
+        document.body.requestFullscreen();
+          // if(document.body.fullscreenEnabled)
+          // {
+          //   if(document.fullscreenElement != null)
+          //   {
+          //     document.exitFullscreen();
+          //   }
+          //   else
+          //   {
+          //     document.body.requestFullscreen();
+          //     if(/Android/i.test(navigator.userAgent) == false)
+          //     {
+          //         screen.orientation.lock("landscape");
+          //     }
+          //   }
+          // }
+          // else if(document.body.webkitSupportsFullscreen)
+          // {
+          //   if(document.webkitDisplayingFullscreen)
+          //   {
+          //       document.webkitExitFullscreen();
+          //   }
+          //   else
+          //   {
+          //       document.body.webkitEnterFullscreen();
+          //       if(/iPhone|iPad|iPod/i.test(navigator.userAgent))
+          //       {
+          //       window.addEventListener("orientationchange", function() {
+          //         if (window.orientation == 90 || window.orientation == -90)
+          //         {
+          //           alert("1");
+          //         } 
+          //         else 
+          //         {
+          //           alert("2");
+          //         }
+          //       });
+          //       }
+          //   }
+          // }
       }
     </script>
   </body>
