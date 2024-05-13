@@ -76,7 +76,6 @@
 
       function FullScreen()
       {
-
           if(document.body.fullscreenEnabled)
           {
             if(document.fullscreenElement != null)
@@ -86,7 +85,7 @@
             else
             {
               document.body.requestFullscreen();
-              if(/Android/i.test(navigator.userAgent))
+              if(/Android/i.test(navigator.userAgent) == false)
               {
                   screen.orientation.lock("landscape");
               }
