@@ -56,7 +56,7 @@
       function FullScreen()
       {
         //myGameInstance.SetFullscreen(1);
-        if(document.fullscreenElement?.nodeName === "game-container")
+        if(document.fullscreenElement?.nodeName === "BODY")
         {
           document.body.exitFullscreen();
         }
