@@ -16,6 +16,7 @@
 
       function Play()
       {
+        isGamePlayed = true;
         document.getElementById("play-button").style.display = "none";
         document.getElementById("full_screen_button").style.display = "block";
         document.getElementById("unity-canvas").style.display = "block";
@@ -49,6 +50,7 @@
         myGameInstance.SendMessage("JsComunication", "OnStart");
         OnResize();
         });
+
       }
 
       function OnResize()
@@ -79,7 +81,8 @@
         else
         {
           document.body.requestFullscreen();
-          screen.orientation.lock("landscape");
+          if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+            screen.orientation.lock("landscape");
         }
       }
     </script>
