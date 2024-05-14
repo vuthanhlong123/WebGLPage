@@ -73,22 +73,6 @@
       }
 
       PlayButtonDisplayment();
-
-      function FullScreen()
-      {
-        if(document.fullscreenElement != null)
-        {
-            document.exitFullscreen();
-        }
-        else
-        {
-            document.body.requestFullscreen();
-            if(/Android/i.test(navigator.userAgent))
-            {
-                screen.orientation.lock("landscape");
-            }
-        }
-      }
     </script>
   </body>
 </html>
