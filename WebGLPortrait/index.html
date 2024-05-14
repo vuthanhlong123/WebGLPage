@@ -9,7 +9,7 @@
     <canvas id="unity-canvas" tabindex="-1" style="width: 0px; height: 0px; background: #231F20; display: none;"></canvas>
     <input id="play-button" type="button" style="width: 200px; height: 80px; display: none;" name="Play_button" value="Play" onclick="Play()">
     <!-- <input id="full_screen_button" type="button" style="position: absolute; width: 100px; height: 50px; left: 10px; display: none;" name="full_screen_button" value="Full Screen" onclick="FullScreen()"> -->
-    <script src="Build/WebGL.loader.js"></script>
+    <script src="Build/WebGLPortrait.loader.js"></script>
     <script>
       var myGameInstance;
       var isGamePlayed = false;
@@ -36,9 +36,9 @@
         document.getElementById("unity-canvas").style.display = "block";
 
         createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/WebGL.data.unityweb",
-        frameworkUrl: "Build/WebGL.framework.js.unityweb",
-        codeUrl: "Build/WebGL.wasm.unityweb",
+        dataUrl: "Build/WebGLPortrait.data.unityweb",
+        frameworkUrl: "Build/WebGLPortrait.framework.js.unityweb",
+        codeUrl: "Build/WebGLPortrait.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "WebGLTesting",
