@@ -70,10 +70,150 @@
          button.style.marginLeft = (window.innerWidth/2) - (200/2) +"px"; //200 button width
          button.style.marginTop = (window.innerHeight/2) - (80/2) +"px"; //80 button height
          button.style.display = "block";
+
+        //  var canvas = document.getElementById("unity-canvas");
+        //     var windowNativeWidth = window.innerWidth;
+        //     var windowNativeHeight = window.innerHeight;
+        //     var cssWidth = windowNativeWidth;
+        //     var cssHeight = windowNativeHeight;
+        //     var screenRatio = window.innerWidth/window.innerHeight;
+           
+        //     if(cameraZAsix==0)
+        //     {
+        //       if(screenRatio<1)
+        //       {
+        //           cssWidth = windowNativeWidth;
+        //           cssHeight = cssWidth/gameRatio;
+
+        //           if(windowNativeHeight < cssHeight*minHeight)
+        //           {
+        //             cssHeight = windowNativeHeight/minHeight;
+        //             cssWidth = cssHeight*gameRatio;
+        //           }
+
+        //           if(cssHeight < windowNativeHeight)
+        //           {
+        //               cssHeight = windowNativeHeight;
+        //               cssWidth = cssHeight*gameRatio;
+        //           }
+
+        //           if(cssWidth>windowNativeWidth/minWidth)
+        //           {
+        //              cssWidth = windowNativeWidth/minWidth;
+        //              cssHeight = cssWidth/gameRatio;
+        //           }
+
+        //           canvas.style.marginLeft= (windowNativeWidth/2-(cssWidth/2))+"px";
+        //           canvas.style.marginTop = (windowNativeHeight/2-(cssHeight/2)) + "px";
+                  
+        //       }
+        //       else
+        //       {
+        //           cssHeight = windowNativeHeight;
+        //           cssWidth = cssHeight*gameRatio;
+                 
+        //           canvas.style.marginTop = (windowNativeHeight/2-(cssHeight/2)) + "px";
+        //           canvas.style.marginLeft = (windowNativeWidth/2-(cssWidth/2)) + "px";
+        //       }
+        //     }
+        //     else 
+        //     {
+        //       if(screenRatio>1)
+        //       {
+        //          cssHeight = windowNativeHeight/minWidth;
+        //          cssWidth = cssHeight/gameRatio;
+
+        //          canvas.style.marginTop=(windowNativeHeight/2-(cssHeight/2)) + "px";
+        //          canvas.style.marginLeft = (windowNativeWidth/2-(cssWidth/2)) + "px";
+        //       }
+        //       else
+        //       {
+        //         cssWidth = windowNativeWidth;
+        //         cssHeight = cssWidth*gameRatio;
+                
+        //         if(windowNativeHeight<cssHeight*minWidth)
+        //         {
+        //            cssHeight = windowNativeHeight/minWidth;
+        //            cssWidth = cssHeight/gameRatio;
+        //         }
+
+        //         canvas.style.marginLeft=(windowNativeWidth/2-(cssWidth/2)) + "px";
+        //         canvas.style.marginTop = (windowNativeHeight/2-(cssHeight/2)) + "px";
+        //       }
+        //     }
+        //     cssWidth = Math.max(cssWidth, 100);
+        //     cssHeight = Math.max(cssHeight, 100);
+
+        //     if (canvas)
+        //     {
+        //         canvas.style.width = cssWidth + "px";
+        //         canvas.style.height = cssHeight + "px";
+        //     }
+
+        //     if(cameraZAsix==0)
+        //     {
+        //         if(windowNativeHeight<cssHeight)
+        //         {
+        //             var canvasWidthRatio = (cssHeight-windowNativeHeight)/cssHeight;
+        //             return gameCanvasWidth-(gameCanvasWidth*canvasWidthRatio);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         if(windowNativeWidth<cssWidth)
+        //         {
+        //             var canvasWidthRatio = (cssWidth-windowNativeWidth)/cssWidth;
+        //             return gameCanvasWidth-(gameCanvasWidth*canvasWidthRatio);
+        //         }
+        //     }
       }
 
+      // function save()
+      // {
+      //   var canvas = document.getElementById("unity-canvas");
+      //       var windowNativeWidth = window.innerWidth;
+      //       var windowNativeHeight = window.innerHeight;
+      //       var cssHeight = windowNativeHeight;
+      //       var cssWidth = windowNativeWidth;
+
+      //       if(cameraZAsix==0)
+      //       {
+      //         cssHeight = windowNativeHeight;
+      //         cssWidth = cssHeight*gameRatio;
+
+      //         canvas.style.marginLeft = (windowNativeWidth/2-(cssWidth/2))+"px";
+      //         canvas.style.marginTop = (windowNativeHeight/2-(cssHeight/2))+"px";
+      //       }
+
+      //         cssWidth = Math.max(cssWidth, 100);
+      //         cssHeight = Math.max(cssHeight, 100);
+            
+      //         if (canvas)
+      //         {
+      //             canvas.style.width = cssWidth + "px";
+      //             canvas.style.height = cssHeight + "px";
+      //         }
+
+      //       if(cameraZAsix==0)
+      //       {
+      //         if(windowNativeWidth<cssHeight*gameRatio)
+      //         {
+      //           var canvasWidthRatio = ((cssHeight*gameRatio)-windowNativeWidth)/(cssHeight*gameRatio);
+      //           return gameCanvasWidth-(gameCanvasWidth*canvasWidthRatio);
+      //         }
+      //       }
+      //       else
+      //       {
+      //         if(windowNativeHeight<cssHeight)
+      //         {
+      //           var canvasWidthRatio = (cssHeight-windowNativeHeight)/cssHeight;
+      //           return gameCanvasWidth-(gameCanvasWidth*canvasWidthRatio);
+      //         }
+      //       }
+      // }
+
       PlayButtonDisplayment();
-      //10
+      //12
     </script>
   </body>
 </html>
