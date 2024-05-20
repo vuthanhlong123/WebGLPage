@@ -6,9 +6,14 @@
     <title>Unity WebGL Player | WebGLTesting</title>
   </head>
   <body id="game-container" style="text-align: center; padding: 0; border: 0; margin: 0;" onresize="OnResize()">
+    <style>
+        .playButton{
+          display: block;
+          margin: auto;
+        }
+    </style>
     <canvas id="unity-canvas" tabindex="-1" style="width: 0px; height: 0px; background: #231F20; display: none;"></canvas>
-    <input id="play-button" type="button" style="width: 200px; height: 80px; display: none;" name="Play_button" value="Play" onclick="Play()">
-    <!-- <input id="full_screen_button" type="button" style="position: absolute; width: 100px; height: 50px; left: 10px; display: none;" name="full_screen_button" value="Full Screen" onclick="FullScreen()"> -->
+    <input class="playButton" id="play-button" type="button" style="width: 200px; height: 80px; display: none;" name="Play_button" value="Play" onclick="Play()">
     <script src="Build/WebGL.loader.js"></script>
     <script>
       var myGameInstance;
@@ -32,7 +37,6 @@
       {
         isGamePlayed = true;
         document.getElementById("play-button").style.display = "none";
-        //document.getElementById("full_screen_button").style.display = "block";
         document.getElementById("unity-canvas").style.display = "block";
 
         createUnityInstance(document.querySelector("#unity-canvas"), {
@@ -47,7 +51,7 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
         }).then((unityInstacne)=>{
         myGameInstance = unityInstacne;
-        myGameInstance.SendMessage("JsComunication", "OnStart");
+        myGameInstance.SendMessage("WebGLAutoScale", "OnStart");
         OnResize();
         });
       }
@@ -56,7 +60,7 @@
       {
           if(isGamePlayed)
           {
-            myGameInstance.SendMessage("JsComunication", "OnGameResize");
+            myGameInstance.SendMessage("WebGLAutoScale", "OnGameResize");
           }
           else
           {
@@ -72,8 +76,7 @@
          button.style.display = "block";
       }
 
-      PlayButtonDisplayment();
-      //8
+      //PlayButtonDisplayment();
     </script>
   </body>
 </html>
