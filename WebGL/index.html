@@ -10,10 +10,12 @@
         .playButton{
           display: block;
           margin: auto;
+          width: 200px;
+          height: 80px;
         }
     </style>
     <canvas id="unity-canvas" tabindex="-1" style="width: 0px; height: 0px; background: #231F20; display: none;"></canvas>
-    <input class="playButton" id="play-button" type="button" style="width: 200px; height: 80px; display: none;" name="Play_button" value="Play" onclick="Play()">
+    <input class="playButton" id="play-button" type="button" style="width: 200px; height: 80px;" name="Play_button" value="Play" onclick="Play()">
     <script src="Build/WebGL.loader.js"></script>
     <script>
       var myGameInstance;
@@ -62,21 +64,7 @@
           {
             myGameInstance.SendMessage("WebGLAutoScale", "OnGameResize");
           }
-          else
-          {
-            PlayButtonDisplayment();
-          }
       }
-
-      function PlayButtonDisplayment()
-      {
-         button = document.getElementById("play-button");
-         button.style.marginLeft = (window.innerWidth/2) - (200/2) +"px"; //200 button width
-         button.style.marginTop = (window.innerHeight/2) - (80/2) +"px"; //80 button height
-         button.style.display = "block";
-      }
-
-      //PlayButtonDisplayment();
     </script>
   </body>
 </html>
