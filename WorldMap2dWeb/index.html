@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  <body onresize="Resize()">
+  <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -89,7 +89,7 @@
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
-        //config.devicePixelRatio = 1;
+        config.devicePixelRatio = 2;
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -116,29 +116,29 @@
 
       document.body.appendChild(script);
 
-      function Resize()
-      {
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
-        {
-           gameRatio = 16/9;
-           width = window.innerWidth;
-           height = window.innerHeight;
-           screenRatio = window.innerWidth/window.innerHeight;
+      // function Resize()
+      // {
+      //   if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+      //   {
+      //      gameRatio = 16/9;
+      //      width = window.innerWidth;
+      //      height = window.innerHeight;
+      //      screenRatio = window.innerWidth/window.innerHeight;
 
-           if(screenRatio>1)
-           {
-              width = height * gameRatio;
-           }
-           else
-           {
-             height = width /gameRatio;
-           }
+      //      if(screenRatio>1)
+      //      {
+      //         width = height * gameRatio;
+      //      }
+      //      else
+      //      {
+      //        height = width /gameRatio;
+      //      }
 
-           canvas.style.width = width+"px";
-           canvas.style.height = height+"px";
+      //      canvas.style.width = width+"px";
+      //      canvas.style.height = height+"px";
 
-        }
-      }
+      //   }
+      // }
 
     </script>
   </body>
